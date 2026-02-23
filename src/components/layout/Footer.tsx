@@ -38,7 +38,7 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold mb-4">Connect</h4>
             <a
-              href="https://github.com/timcooper/virtual-team-planner"
+              href="https://github.com/tjscooper/virtual-team-planner"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 text-sm text-gray-400 hover:text-areas transition-colors"

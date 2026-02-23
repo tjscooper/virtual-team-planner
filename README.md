@@ -2,7 +2,7 @@
 
 ![Virtual Team Demo](https://img.shields.io/badge/Live%20Demo-Virtual%20Team-00f5ff?style=for-the-badge)
 
-**Live Demo:** [https://timcooper.github.io/virtual-team-planner/](https://timcooper.github.io/virtual-team-planner/)
+**Live Demo:** [https://tjscooper.github.io/virtual-team-planner/](https://tjscooper.github.io/virtual-team-planner/)
 
 ## Overview
 
@@ -38,7 +38,7 @@ An interactive web application showcasing a virtual team orchestration system wi
 
 ```bash
 # Clone the repository
-git clone https://github.com/timcooper/virtual-team-planner.git
+git clone https://github.com/tjscooper/virtual-team-planner.git
 cd virtual-team-planner
 
 # Install dependencies
