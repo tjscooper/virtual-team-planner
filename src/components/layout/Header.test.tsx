@@ -105,13 +105,13 @@ describe('Header component', () => {
       await user.click(screen.getByLabelText('Toggle menu'));
 
       const agentsLinks = screen.getAllByText('Agents');
-      const mobileAgentsLink = agentsLinks[agentsLinks.length - 1]; // Last one is mobile
+      const mobileAgentsLink = agentsLinks[agentsLinks.length - 1]!; // Last one is mobile
       await user.click(mobileAgentsLink);
 
       // Wait a tick for state update
       await new Promise(resolve => setTimeout(resolve, 0));
 
-      const mobileNav = container.querySelector('.md\\:hidden.mt-4');
+      const mobileNav = container.querySelector('.md\\:hidden.mt-4') as Element | null;
       expect(mobileNav).not.toBeInTheDocument();
     });
   });

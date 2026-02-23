@@ -60,7 +60,7 @@ describe('AgentDetailPage', () => {
     });
 
     it('should have at least 3 capabilities', () => {
-      const { container } = renderAgentDetailPage('product-owner');
+      renderAgentDetailPage('product-owner');
       const capabilitiesSection = screen.getByText('Key Capabilities').parentElement;
       const listItems = capabilitiesSection?.querySelectorAll('li');
       expect(listItems?.length).toBeGreaterThanOrEqual(3);
