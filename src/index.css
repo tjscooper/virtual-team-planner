@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-void: #0a0a0f;
+  --bg-primary: #1a1a24;
+  --areas: #00f5ff;
+  --projects: #ff00ff;
+  --resources: #a855f7;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a0a0a0;
+  --border-glass: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-void text-gray-100 font-sans antialiased;
+    background-color: var(--bg-void);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3 {
+    @apply font-pixel tracking-wider;
+  }
+
+  h1 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h2 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h3 {
+    @apply text-lg md:text-xl;
+  }
+
+  code, pre {
+    @apply font-terminal;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-areas;
+  }
+
+  /* Skip to main content link */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50;
+    @apply bg-areas text-void px-4 py-2 rounded;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-void-50/40 backdrop-blur-xl border border-white/10 rounded-lg;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-panel-hover {
+    @apply glass-panel transition-all duration-300;
+    @apply hover:translate-y-[-8px] hover:shadow-lg;
+  }
+
+  .neon-glow {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes neon-pulse {
+    0%, 100% {
+      filter: drop-shadow(0 0 8px currentColor);
+    }
+    50% {
+      filter: drop-shadow(0 0 20px currentColor);
+    }
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-void;
+  }
+
+  .btn-primary {
+    @apply btn bg-areas text-void hover:bg-areas/90;
+    @apply shadow-[0_0_20px_rgba(0,245,255,0.3)] hover:shadow-[0_0_30px_rgba(0,245,255,0.5)];
+  }
+
+  .btn-secondary {
+    @apply btn bg-projects text-white hover:bg-projects/90;
+    @apply shadow-[0_0_20px_rgba(255,0,255,0.3)] hover:shadow-[0_0_30px_rgba(255,0,255,0.5)];
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent border border-white/20 hover:bg-white/10;
+  }
+}
+
+@layer utilities {
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
+
+  .text-gradient-cyan-magenta {
+    @apply text-gradient;
+    background-image: linear-gradient(135deg, var(--areas), var(--projects));
+  }
+
+  .text-gradient-purple {
+    @apply text-gradient;
+    background-image: linear-gradient(135deg, var(--resources), #7c3aed);
+  }
+}
